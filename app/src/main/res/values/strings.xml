@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Coffee recipes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_button">add</string>
+    <string name="origem">Origem</string>
+    <string name="tipo">Tipo</string>
+    <string name="detalhes">Detalhes</string>
+    <string name="receita">Receita</string>
+    <string name="pre_o_min">Preço MIN</string>
+    <string name="pre_o_max">Preço MAX</string>
+    <string name="add_coffee">ADD coffee</string>
+</resources>
