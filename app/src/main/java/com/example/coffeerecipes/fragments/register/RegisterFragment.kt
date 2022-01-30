@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.coffeerecipes.R
-import com.example.coffeerecipes.data.Coffee
-import com.example.coffeerecipes.data.CoffeeViewModel
+import com.example.coffeerecipes.model.Coffee
+import com.example.coffeerecipes.viewModel.CoffeeViewModel
 import com.example.coffeerecipes.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
@@ -28,6 +27,7 @@ class RegisterFragment : Fragment() {
         binding.addCoffee.setOnClickListener {
             insertDataToDatabase()
         }
+
 
         return binding.root
     }

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#BEFFED53"
-        tools:context=".fragments.register.RegisterFragment">
+        tools:context=".fragments.update.UpdateFragment" >
 
         <EditText
-            android:id="@+id/typeET"
+            android:id="@+id/uptypeET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
@@ -28,7 +28,7 @@
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/detailsET"
+            android:id="@+id/updetailsET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -42,11 +42,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/typeET"
+            app:layout_constraintTop_toBottomOf="@+id/uptypeET"
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/fromET"
+            android:id="@+id/upfromET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -60,11 +60,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailsET"
+            app:layout_constraintTop_toBottomOf="@+id/updetailsET"
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/recipeET"
+            android:id="@+id/uprecipeET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
@@ -78,11 +78,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fromET"
+            app:layout_constraintTop_toBottomOf="@+id/upfromET"
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/priceminET"
+            android:id="@+id/uppriceminET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -96,11 +96,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeET"
+            app:layout_constraintTop_toBottomOf="@+id/uprecipeET"
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/pricemaxET"
+            android:id="@+id/uppricemaxET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -114,16 +114,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/priceminET"
+            app:layout_constraintTop_toBottomOf="@+id/uppriceminET"
             tools:ignore="LabelFor" />
 
         <Button
-            android:id="@+id/addCoffee"
+            android:id="@+id/upCoffee"
             android:layout_width="164dp"
             android:layout_height="52dp"
             android:layout_marginBottom="24dp"
             android:background="#F4ECEC"
-            android:text="@string/add_coffee"
+            android:text="@string/update_coffee"
             android:textColor="#FFFFFF"
             android:textColorHint="#F3EDED"
             app:backgroundTint="#4CAF50"
@@ -135,3 +135,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+

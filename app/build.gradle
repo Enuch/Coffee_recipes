@@ -2,7 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
+
 
 android {
     compileSdk 32
@@ -59,5 +61,6 @@ dependencies {
     implementation "androidx.room:room-ktx:2.4.1"
 // optional - Test helpers
     testImplementation "androidx.room:room-testing:2.4.1"
+
 
 }

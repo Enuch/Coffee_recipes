@@ -12,7 +12,7 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.coffeerecipes.R
-import com.example.coffeerecipes.data.CoffeeViewModel
+import com.example.coffeerecipes.viewModel.CoffeeViewModel
 import com.example.coffeerecipes.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

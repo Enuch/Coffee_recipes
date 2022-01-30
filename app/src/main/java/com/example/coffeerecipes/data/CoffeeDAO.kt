@@ -1,10 +1,8 @@
 package com.example.coffeerecipes.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
+import com.example.coffeerecipes.model.Coffee
 
 @Dao
 interface CoffeeDAO {
@@ -12,6 +10,13 @@ interface CoffeeDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun add(coffee: Coffee)
 
+    @Update
+    suspend fun update(coffee: Coffee)
+
     @Query("SELECT * FROM coffee ORDER BY id ASC")
     fun listAll(): LiveData<List<Coffee>>
+
+    @Query("SELECT * FROM coffee WHERE id = :id")
+    fun findById(id: Int): LiveData<Coffee>
+
 }
