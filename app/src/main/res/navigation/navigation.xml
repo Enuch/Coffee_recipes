@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.coffeerecipes.fragments.list.HomeFragment"
-        android:label="fragment_home"
+        android:label="home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_registerFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.coffeerecipes.fragments.register.RegisterFragment"
-        android:label="fragment_register"
+        android:label="register"
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_homeFragment"

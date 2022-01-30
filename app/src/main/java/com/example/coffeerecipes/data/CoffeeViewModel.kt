@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class CoffeeViewModel(application: Application): AndroidViewModel(application) {
 
-    private val listAll: LiveData<List<Coffee>>
+    val listAll: LiveData<List<Coffee>>
     private val repository: CoffeeRepository
 
     init {
