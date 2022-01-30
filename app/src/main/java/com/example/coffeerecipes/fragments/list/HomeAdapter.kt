@@ -31,6 +31,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
 
             findViewById<View>(R.id.itemLayout).setOnClickListener {
                 val bundle = bundleOf("id" to currentItem.id)
+                bundle.putString("type", currentItem.type)
                 findNavController().navigate(R.id.action_homeFragment_to_updateFragment, bundle)
             }
         }

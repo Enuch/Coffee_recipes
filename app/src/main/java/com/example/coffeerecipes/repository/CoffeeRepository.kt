@@ -15,6 +15,14 @@ class CoffeeRepository(private val coffeeDAO: CoffeeDAO) {
         coffeeDAO.update(coffee)
     }
 
+    suspend fun delete(coffee: Coffee) {
+        coffeeDAO.delete(coffee)
+    }
+
+    suspend fun deleteAll() {
+        coffeeDAO.deleteAll()
+    }
+
     fun findById(id: Int): LiveData<Coffee> {
         return coffeeDAO.findById(id)
     }

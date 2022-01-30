@@ -13,6 +13,12 @@ interface CoffeeDAO {
     @Update
     suspend fun update(coffee: Coffee)
 
+    @Delete
+    suspend fun delete(coffee: Coffee)
+
+    @Query("DELETE FROM coffee")
+    suspend fun deleteAll()
+
     @Query("SELECT * FROM coffee ORDER BY id ASC")
     fun listAll(): LiveData<List<Coffee>>
 

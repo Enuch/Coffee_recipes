@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.coffeerecipes.data.CoffeeDAO
 import com.example.coffeerecipes.data.CoffeeDatabase
 import com.example.coffeerecipes.model.Coffee
 import com.example.coffeerecipes.repository.CoffeeRepository
@@ -34,6 +33,18 @@ class CoffeeViewModel(application: Application): AndroidViewModel(application) {
     fun update(coffee: Coffee) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.update(coffee)
+        }
+    }
+
+    fun delete(coffee: Coffee) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.delete(coffee)
+        }
+    }
+
+    fun deleteAll() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteAll()
         }
     }
 
