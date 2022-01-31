@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DDDDDD">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="296dp"
+            android:background="#8BC34A"
+            android:contentDescription="@string/string_imagemcafe"
+            android:src="@drawable/cafepng"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/typeVW"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:background="#D783402B"
+            android:gravity="center"
+            android:text="MOCHA"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/detailVW"
+            android:layout_width="278dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="12dp"
+            android:gravity="bottom|center"
+            android:text="Café feito com Leite e canela"
+            android:textColor="#1C34B6"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toEndOf="@+id/typeVW"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/VWfrom"
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:background="#D583402B"
+            android:gravity="center"
+            android:text="Origem:"
+            android:textColor="#FBFBFB"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/typeVW" />
+
+        <TextView
+            android:id="@+id/fromVW"
+            android:layout_width="75dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="Brasil"
+            android:textColor="#3F51B5"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/VWfrom"
+            app:layout_constraintTop_toBottomOf="@+id/typeVW" />
+
+        <TextView
+            android:id="@+id/recipeVW"
+            android:layout_width="380dp"
+            android:layout_height="276dp"
+            android:layout_marginTop="44dp"
+            android:background="#88682B18"
+            android:gravity="center|top"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailVW" />
+
+        <TextView
+            android:id="@+id/priceminVW"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="48dp"
+            android:gravity="center"
+            android:text="Menor preço: 5.00"
+            android:textColor="#0F6513"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pricemaxVW"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeVW" />
+
+        <TextView
+            android:id="@+id/pricemaxVW"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="76dp"
+            android:gravity="center"
+            android:text="Maior  preço: 50.00"
+            android:textColor="#B51307"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeVW"
+            app:layout_constraintVertical_bias="0.505" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

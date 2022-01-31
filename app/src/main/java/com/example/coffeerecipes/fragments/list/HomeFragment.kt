@@ -4,11 +4,13 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -40,6 +42,19 @@ class HomeFragment : Fragment() {
         }
 
         setHasOptionsMenu(true)
+
+        recycleView.addOnItemTouchListener(HomeTouchListener(requireContext(), recycleView,
+            object : HomeTouchListener.OnItemClickListener{
+                override fun onItemClick(v: View, position: Int) {
+                    val bundle = bundleOf("id" to adapter.coffeeList[position].id)
+                    findNavController().navigate(R.id.action_homeFragment_to_detailFragment, bundle)
+                }
+
+                override fun onItemLongClick(v: View, position: Int) {
+                    val bundle = bundleOf("id" to adapter.coffeeList[position].id)
+                    findNavController().navigate(R.id.action_homeFragment_to_updateFragment, bundle)
+                }
+            }),)
 
         return binding.root
     }

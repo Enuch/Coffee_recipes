@@ -12,4 +12,6 @@
     <string name="add_coffee">ADD coffee</string>
     <string name="_1">1</string>
     <string name="update_coffee">update coffee</string>
+    <string name="imagemcafe">imagemCafe</string>
+    <string name="string_imagemcafe">cafe</string>
 </resources>

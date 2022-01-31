@@ -13,7 +13,7 @@ import com.example.coffeerecipes.R
 import com.example.coffeerecipes.model.Coffee
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
-    private var coffeeList = emptyList<Coffee>()
+    var coffeeList = emptyList<Coffee>()
     private var coffee = Coffee(1, "", "", "", "", 1F, 1F)
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -23,7 +23,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: HomeAdapter.MyViewHolder, position: Int) {
-        val currentItem = coffeeList[position]
+        var currentItem = coffeeList[position]
         holder.itemView.apply {
             findViewById<TextView>(R.id.idTT).text = currentItem.id.toString()
             findViewById<TextView>(R.id.typeTT).text = currentItem.type
