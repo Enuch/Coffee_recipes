@@ -10,19 +10,17 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.coffeerecipes.R
-import com.example.coffeerecipes.viewModel.CoffeeViewModel
+import com.example.coffeerecipes.viewModel.HomeViewModel
 import com.example.coffeerecipes.databinding.FragmentHomeBinding
-import com.example.coffeerecipes.model.Coffee
 
 class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
-    private lateinit var coffeeViewModel: CoffeeViewModel
+    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
@@ -32,8 +30,8 @@ class HomeFragment : Fragment() {
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(requireContext())
 
-        coffeeViewModel = ViewModelProvider(this)[CoffeeViewModel::class.java]
-        coffeeViewModel.listAll.observe(viewLifecycleOwner, Observer { coffee ->
+        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        homeViewModel.listAll.observe(viewLifecycleOwner, Observer { coffee ->
             adapter.setData(coffee)
         })
 
@@ -73,7 +71,7 @@ class HomeFragment : Fragment() {
     private fun deleteAll() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") { _, _->
-            coffeeViewModel.deleteAll()
+            homeViewModel.deleteAll()
             Toast.makeText(requireContext(), "Sucesso ao deletar todos!", Toast.LENGTH_SHORT).show()
         }
         builder.setNegativeButton("No") { _, _ -> }

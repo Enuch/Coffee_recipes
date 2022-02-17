@@ -7,35 +7,35 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.coffeerecipes.R
 import com.example.coffeerecipes.databinding.FragmentDetailBinding
 import com.example.coffeerecipes.model.Coffee
-import com.example.coffeerecipes.viewModel.CoffeeViewModel
+import com.example.coffeerecipes.viewModel.DetailViewModel
+import com.example.coffeerecipes.viewModel.HomeViewModel
 
 class DetailFragment : Fragment() {
 
-    lateinit var binding: FragmentDetailBinding
-    private lateinit var coffeeViewModel: CoffeeViewModel
+    private lateinit var binding: FragmentDetailBinding
+    private lateinit var detailViewModel: DetailViewModel
     lateinit var coffee: LiveData<Coffee>
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false)
 
-        coffeeViewModel = ViewModelProvider(this)[CoffeeViewModel::class.java]
+        detailViewModel = ViewModelProvider(this)[DetailViewModel::class.java]
 
-        var id = arguments?.getInt("id")
-        coffee = coffeeViewModel.getCoffee(id!!)
+        val id = arguments?.getInt("id")
+        coffee = detailViewModel.getCoffee(id!!)
 
-        coffee.observe(viewLifecycleOwner, Observer { coffee ->
-            binding.typeVW.setText(coffee.type)
-            binding.detailVW.setText(coffee.details)
-            binding.fromVW.setText(coffee.from)
-            binding.recipeVW.setText(coffee.recipe)
-            binding.priceminVW.setText(coffee.priceMin.toString())
-            binding.pricemaxVW.setText(coffee.priceMax.toString())
-        })
+        coffee.observe(viewLifecycleOwner) { coffee ->
+            binding.typeVW.text = coffee.type
+            binding.detailVW.text = coffee.details
+            binding.fromVW.text = coffee.from
+            binding.recipeVW.text = coffee.recipe
+            binding.priceminVW.text = coffee.priceMin.toString()
+            binding.pricemaxVW.text = coffee.priceMax.toString()
+        }
 
 
         return binding.root

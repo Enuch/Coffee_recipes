@@ -5,29 +5,30 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.room.Room
 import com.example.coffeerecipes.data.CoffeeDatabase
 import com.example.coffeerecipes.model.Coffee
 import com.example.coffeerecipes.repository.CoffeeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class CoffeeViewModel(application: Application): AndroidViewModel(application) {
+class UpdateViewModel(application: Application): AndroidViewModel(application) {
 
-    val listAll: LiveData<List<Coffee>>
     var coffee: LiveData<Coffee>
     private val repository: CoffeeRepository
 
-    init {
-        val coffeeDao = CoffeeDatabase.getDatabase(application).coffeeDao()
-        repository = CoffeeRepository(coffeeDao)
-        listAll = repository.listAll
-        coffee = MutableLiveData()
+    private val db:CoffeeDatabase by lazy {
+        Room.databaseBuilder(
+            application.applicationContext,
+            CoffeeDatabase::class.java,
+            "coffee.sqlite"
+        ).build()
     }
 
-    fun add(coffee: Coffee) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.add(coffee)
-        }
+    init {
+        val coffeeDao = db.coffeeDao()
+        repository = CoffeeRepository(coffeeDao)
+        coffee = MutableLiveData()
     }
 
     fun update(coffee: Coffee) {
@@ -39,12 +40,6 @@ class CoffeeViewModel(application: Application): AndroidViewModel(application) {
     fun delete(coffee: Coffee) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.delete(coffee)
-        }
-    }
-
-    fun deleteAll() {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteAll()
         }
     }
 

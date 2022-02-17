@@ -11,18 +11,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.coffeerecipes.R
 import com.example.coffeerecipes.model.Coffee
-import com.example.coffeerecipes.viewModel.CoffeeViewModel
 import com.example.coffeerecipes.databinding.FragmentRegisterBinding
+import com.example.coffeerecipes.viewModel.RegisterViewModel
 
 class RegisterFragment : Fragment() {
 
-    private lateinit var coffeeViewModel: CoffeeViewModel
+    private lateinit var registerViewModel: RegisterViewModel
     private lateinit var binding: FragmentRegisterBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false)
 
-        coffeeViewModel = ViewModelProvider(this)[CoffeeViewModel::class.java]
+        registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
 
         binding.addCoffee.setOnClickListener {
             insertDataToDatabase()
@@ -42,7 +42,7 @@ class RegisterFragment : Fragment() {
 
         if(inputCheck(type, details, from, recipe, priceMin, priceMax)) {
             val coffee = Coffee(0, type, details, from, recipe, priceMin.toFloat(), priceMax.toFloat())
-            coffeeViewModel.add(coffee)
+            registerViewModel.add(coffee)
             Toast.makeText(requireContext(), "Sucesso ao cadastrar!", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_registerFragment_to_homeFragment)
         } else {
